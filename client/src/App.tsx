@@ -84,9 +84,8 @@ const App = () => {
         <div className={`${styles.main} ${isDark ? styles.dark : styles.light}`}>
           {!showWelcome && (
             <Routes>
-              <Route path="/home" element={<>
-                <Home />
-              </>} />
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/works" element={<Works />} />
               <Route path="/contact" element={<Contact />} />
