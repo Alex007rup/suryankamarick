@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  width: 100%;
+  height: 400vh;
+  margin: 0; /* Remove if causing issues */
+  padding: 0; /* Adjust padding if it's causing overflow */
+  overflow: hidden; /* Optional: hides any overflow */
+}

@@ -1,0 +1,128 @@
+.main {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-template-rows: 80px;
+  transition: background-color 0.3s ease;
+  z-index: 9999;
+}
+
+.light {
+  background-color: #f3f3f3;
+  color: #000000;
+  transition: background-color 0.3s ease;
+}
+
+.dark {
+  background-color: #121212;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+  .links::before,
+  .links::after {
+    background-color: #f3f3f3;
+  }
+}
+
+.dark .links::before,
+.dark .links::after {
+  background-color: #f3f3f3;
+}
+
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  margin: 0 5px;
+  width: 150px;
+}
+
+.navSection {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 380px;
+  height: 60px;
+  border-radius: 5px;
+  /* gap: 10px; */
+  transition: width 0.5s ease, gap 0.5s ease;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  position: relative;
+  transition: all 0.45s ease;
+  outline: none;
+}
+
+.names {
+  display: none;
+  transition: opacity 0.45s ease-in-out, transform 0.45s ease-in-out;
+}
+
+.icons {
+  transition: all 0.45s ease-in-out;
+}
+
+.links:hover .names {
+  display: block;
+  opacity: 1;
+}
+
+.links::before,
+.links::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #121212;
+  opacity: 0;
+  transition: opacity 0.45s ease-in-out, transform 0.45s ease-in-out;
+}
+
+.links::before {
+  top: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.links::after {
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.links:hover::before,
+.links:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.links:hover::before {
+  transform-origin: right;
+}
+
+.links:hover::after {
+  transform-origin: left;
+}
+
+.links:hover .icons {
+  transform: translateX(-5px);
+}
