@@ -1,4 +1,3 @@
-import React from 'react'
 import TextEffect from './TextEffect'
 import styles from '../../styles/Home.module.css'
 
