@@ -19,15 +19,27 @@
   background-color: #121212;
   color: #ffffff;
   transition: background-color 0.3s ease;
-  .links::before,
-  .links::after {
-    background-color: #f3f3f3;
-  }
 }
 
 .dark .links::before,
 .dark .links::after {
   background-color: #f3f3f3;
+}
+
+.dark .navLinks a:nth-child(odd) .icons {
+  padding: 8px;
+  border-radius: 50%;
+  color: #f3f3f3;
+  background-color: #ff6a00;
+  transition: background-color 0.3s ease;
+}
+
+.dark .navLinks a:nth-child(even) .icons {
+  padding: 8px;
+  border-radius: 50%;
+  color: #121212;
+  background-color: #f3f3f3;
+  transition: background-color 0.3s ease;
 }
 
 .left {
@@ -47,80 +59,59 @@
   height: 80px;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 20px;
+  padding-right: 30px;
 }
 
 .navLinks {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 380px;
   height: 60px;
   border-radius: 5px;
-  /* gap: 10px; */
-  transition: width 0.5s ease, gap 0.5s ease;
+  gap: 35px;
+  transition: gap 0.3s ease;
 }
 
-.links {
+.navLinks a:nth-child(odd) .icons {
+  padding: 8px;
+  border-radius: 50%;
+  color: #f3f3f3;
+  background-color: #121212;
+}
+
+.navLinks a:nth-child(even) .icons {
+  padding: 8px;
+  border-radius: 50%;
+  color: #f3f3f3;
+  background-color: #ff6a00;
+}
+
+.navLinks .links {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
-  padding: 10px;
   position: relative;
-  transition: all 0.45s ease;
+  transition: all 0.3s ease;
   outline: none;
 }
 
 .names {
   display: none;
+  opacity: 0;
+  transform: translateY(10px);
   transition: opacity 0.45s ease-in-out, transform 0.45s ease-in-out;
-}
-
-.icons {
-  transition: all 0.45s ease-in-out;
 }
 
 .links:hover .names {
   display: block;
   opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
 }
 
-.links::before,
-.links::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  background-color: #121212;
-  opacity: 0;
-  transition: opacity 0.45s ease-in-out, transform 0.45s ease-in-out;
-}
-
-.links::before {
-  top: 0;
-  transform: scaleX(0);
-  transform-origin: left;
-}
-
-.links::after {
-  bottom: 0;
-  transform: scaleX(0);
-  transform-origin: right;
-}
-
-.links:hover::before,
-.links:hover::after {
-  opacity: 1;
-  transform: scaleX(1);
-}
-
-.links:hover::before {
-  transform-origin: right;
-}
-
-.links:hover::after {
-  transform-origin: left;
+.icons {
+  transition: all 0.3s ease-in-out;
 }
 
 .links:hover .icons {

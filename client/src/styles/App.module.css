@@ -29,18 +29,7 @@
   background-size: cover;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   z-index: 99999999;
-}
-
-.cursor.hovered {
-  transform: translate(-50%, -50%) scale(1.1);
-}
-
-a:hover,
-button:hover,
-.interactive:hover {
-  cursor: none;
 }
 
 ::-webkit-scrollbar {
@@ -49,7 +38,7 @@ button:hover,
 }
 
 ::-webkit-scrollbar-track {
-  background: none;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {

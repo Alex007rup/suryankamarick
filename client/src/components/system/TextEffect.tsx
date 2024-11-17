@@ -1,24 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import styles from '../../styles/TextEffect.module.css';
 
 const TextEffect: React.FC = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  const controls = useAnimation();
-  const { ref, inView } = useInView({
-    triggerOnce: false,
-    threshold: 0.2, // Trigger animation when 20% of the component is in view
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    } else {
-      controls.start('hidden');
-    }
-  }, [controls, inView]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -49,16 +33,7 @@ const TextEffect: React.FC = () => {
   }, [windowWidth]);
 
   return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      variants={{
-        visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
-        hidden: { opacity: 0, scale: 0.8, transition: { duration: 0.6 } },
-      }}
-      className={styles.main}
-    >
+    <div className={styles.main}>
       <div className={styles.wrap}>
         <div className={styles.line}>
           <div className={styles.left}>
@@ -109,7 +84,7 @@ const TextEffect: React.FC = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
