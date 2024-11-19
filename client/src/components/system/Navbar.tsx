@@ -12,7 +12,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsDark(window.scrollY > window.innerHeight * 0.85);
+      setIsDark(window.scrollY > window.innerHeight * 0.6);
     };
 
     window.addEventListener("scroll", handleScroll);

@@ -16,7 +16,7 @@
 }
 
 .dark {
-  background-color: #121212;
+  background-color: #000;
   color: #ffffff;
   transition: background-color 0.3s ease;
 }
@@ -37,7 +37,7 @@
 .dark .navLinks a:nth-child(even) .icons {
   padding: 8px;
   border-radius: 50%;
-  color: #121212;
+  color: #000;
   background-color: #f3f3f3;
   transition: background-color 0.3s ease;
 }
@@ -76,7 +76,7 @@
   padding: 8px;
   border-radius: 50%;
   color: #f3f3f3;
-  background-color: #121212;
+  background-color: #000;
 }
 
 .navLinks a:nth-child(even) .icons {

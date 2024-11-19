@@ -3,6 +3,7 @@ import styles from '../../styles/TextEffect.module.css';
 
 const TextEffect: React.FC = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [scale, setScale] = useState(1);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -23,18 +24,26 @@ const TextEffect: React.FC = () => {
       setWindowWidth(window.innerWidth);
     };
 
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const scaleValue = Math.max(1 - scrollPosition / window.innerHeight, 0); // Scale from 1 to 0 based on scroll position
+      setScale(scaleValue);
+    };
+
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('resize', handleWindowResize);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleWindowResize);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [windowWidth]);
 
   return (
     <div className={styles.main}>
-      <div className={styles.wrap}>
+      <div className={styles.wrap} style={{ transform: `scale(${scale})` }}>
         <div className={styles.line}>
           <div className={styles.left}>
             <div className={styles.content}>

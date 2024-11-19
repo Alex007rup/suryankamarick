@@ -1,0 +1,14 @@
+.main {
+  /* position: relative;
+  top: -70px; */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.title {
+  color: #fff;
+  font-size: 32px;
+}
