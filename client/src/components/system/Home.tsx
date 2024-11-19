@@ -1,5 +1,4 @@
 import TextEffect from './TextEffect'
-import InfinityScrollHorizontal from './InfinityScrollHorizontal'
 import styles from '../../styles/Home.module.css'
 
 import { useEffect, useState } from 'react';
